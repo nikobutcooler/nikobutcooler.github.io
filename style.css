@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
-
-
-
 * {
     margin: 0;
     padding: 0;
@@ -13,12 +10,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
-
-
 html {
     font-size: 62.5%;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -28,17 +21,6 @@ body {
     background-color: black;
     color: white;
 }
-
-section {
-    min-height: 100vh;
-    padding: 5rem 9% 5rem;
-}
-
-span {
-    color: #b74b4b;
-}
-
-
 
 header {
     margin-top: 20px;
@@ -67,8 +49,6 @@ header {
     transform: scale(1.1);
 }
 
-
-
 nav a {
     font-size: 1.8rem;
     color: white;
@@ -85,6 +65,12 @@ nav a.active {
 }
 
 
+/* HOME */
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
 
 .home {
     display: flex;
@@ -100,6 +86,10 @@ nav a.active {
     line-height: 1.3;
 }
 
+span {
+    color: #b74b4b;
+}
+
 .home-content h3 {
     font-size: 4rem;
     margin-bottom: 1rem;
@@ -111,7 +101,7 @@ nav a.active {
 }
 
 
-
+/* IMAGE */
 
 .home-img {
     border-radius: 50%;
@@ -120,7 +110,6 @@ nav a.active {
 .home-img img {
     position: relative;
     width: 32vw;
-    max-width: 450px;
     border-radius: 50%;
     box-shadow: 0 0 25px #b74b4b;
     cursor: pointer;
@@ -131,6 +120,8 @@ nav a.active {
     transform: scale(1.03);
 }
 
+
+/* SOCIAL ICONS */
 
 .social-icons a {
     display: inline-flex;
@@ -155,7 +146,7 @@ nav a.active {
 }
 
 
-
+/* BUTTON */
 
 .btn {
     display: inline-block;
@@ -179,7 +170,7 @@ nav a.active {
 }
 
 
-
+/* TYPING TEXT */
 
 .typing-text {
     font-size: 34px;
@@ -208,9 +199,6 @@ nav a.active {
     animation: cursor 0.6s infinite;
 }
 
-
-
-
 @keyframes cursor {
     to {
         border-left: 3px solid #b74b4b;
@@ -232,7 +220,7 @@ nav a.active {
     }
 
     61%, 80% {
-        content: "YouTuber";
+        content: "Youtuber";
     }
 
     81%, 100% {
@@ -241,48 +229,40 @@ nav a.active {
 }
 
 
+/* CALENDAR */
+
 .calendar-section {
-    background-color: black;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    background-color: black;
 }
 
-.calendar-container {
-    width: 100%;
-    max-width: 1200px;
-    text-align: center;
-}
-
-.calendar-container h2 {
+.calendar-section h2 {
     font-size: 5rem;
-    margin-bottom: 1rem;
 }
 
-.calendar-description {
-    font-size: 1.7rem;
-    color: #aaa;
-    margin-bottom: 3rem;
-}
-
-
-
-.calendar-wrapper {
+.calendar {
     width: 100%;
+    max-width: 1100px;
     height: 650px;
-    overflow: hidden;
     border: 2px solid #b74b4b;
     border-radius: 2rem;
-    box-shadow: 0 0 25px rgba(183, 75, 75, 0.35);
+    overflow: hidden;
+    box-shadow: 0 0 25px #b74b4b;
     background-color: white;
 }
 
-.calendar-wrapper iframe {
+.calendar iframe {
     width: 100%;
     height: 100%;
     border: 0;
 }
 
+
+/* TABLET */
 
 @media (max-width: 1000px) {
 
@@ -292,6 +272,8 @@ nav a.active {
 
 }
 
+
+/* MOBILE */
 
 @media (max-width: 995px) {
 
@@ -344,35 +326,19 @@ nav a.active {
         margin-top: 4rem;
     }
 
-    .calendar-container h2 {
+    .calendar-section h2 {
         font-size: 4rem;
     }
 
-    .calendar-wrapper {
+    .calendar {
         height: 550px;
     }
 }
 
 
-
+/* SMALL PHONE */
 
 @media (max-width: 600px) {
-
-    header {
-        padding: 1rem 5%;
-    }
-
-    .logo {
-        font-size: 2.5rem;
-    }
-
-    section {
-        padding: 5rem 5%;
-    }
-
-    .home {
-        margin: 4rem 0;
-    }
 
     .home .home-content h1 {
         font-size: 4rem;
@@ -382,24 +348,12 @@ nav a.active {
         font-size: 2.5rem;
     }
 
-    .home-content p {
-        font-size: 1.5rem;
-    }
-
     .home-img img {
         width: 80vw;
     }
 
-    .calendar-container h2 {
-        font-size: 3.5rem;
-    }
-
-    .calendar-description {
-        font-size: 1.5rem;
-    }
-
-    .calendar-wrapper {
+    .calendar {
         height: 500px;
-        border-radius: 1rem;
     }
+
 }
