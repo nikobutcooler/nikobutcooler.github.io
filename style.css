@@ -1,47 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
 
-/* --------------------------------
+/* =================================
    RESET
--------------------------------- */
+================================= */
 
 * {
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
+
     text-decoration: none;
+
     border: none;
     outline: none;
+
     font-family: 'Poppins', sans-serif;
 }
 
 
-/* --------------------------------
+/* =================================
    GENERAL
--------------------------------- */
+================================= */
 
 html {
     font-size: 62.5%;
+
     scroll-behavior: smooth;
 }
 
 body {
     width: 100%;
+
     min-height: 100vh;
+
     overflow-x: hidden;
-    background-color: black;
+
+    background-color: #000;
+
     color: white;
 }
 
 
-/* --------------------------------
+/* =================================
    HEADER
--------------------------------- */
+================================= */
 
 header {
-    margin-top: 20px;
 
     position: fixed;
+
     top: 0;
     left: 0;
 
@@ -49,21 +58,24 @@ header {
 
     padding: 1rem 9%;
 
+    margin-top: 20px;
+
     background-color: transparent;
 
-    filter: drop-shadow(10px);
-
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
-    z-index: 100;
+    z-index: 1000;
 }
 
 
 /* LOGO */
 
 .logo {
+
     font-size: 3rem;
 
     color: #b74b4b;
@@ -76,13 +88,16 @@ header {
 }
 
 .logo:hover {
+
     transform: scale(1.1);
+
 }
 
 
 /* NAVIGATION */
 
 nav a {
+
     font-size: 1.8rem;
 
     color: white;
@@ -98,42 +113,51 @@ nav a {
 
 nav a:hover,
 nav a.active {
+
     color: #b74b4b;
 
     border-bottom: 3px solid #b74b4b;
 }
 
 
-/* --------------------------------
+/* =================================
    SECTIONS
--------------------------------- */
+================================= */
 
 section {
+
     min-height: 100vh;
 
     padding: 5rem 9%;
 }
 
 
-/* --------------------------------
+/* =================================
    HOME
--------------------------------- */
+================================= */
 
 .home {
+
+    position: relative;
+
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     gap: 8rem;
 
-    background-color: black;
+    background-color: #000;
 }
 
 
-/* HOME TITLE */
+/* =================================
+   HOME CONTENT
+================================= */
 
-.home .home-content h1 {
+.home-content h1 {
+
     font-size: 6rem;
 
     font-weight: 700;
@@ -142,29 +166,36 @@ section {
 }
 
 
+.home-content p {
+
+    font-size: 1.7rem;
+
+    color: #aaa;
+
+    margin-top: 0.5rem;
+}
+
+
 /* RED TEXT */
 
 span {
+
     color: #b74b4b;
 }
 
 
-/* DESCRIPTION */
-
-.home-content p {
-    font-size: 1.6rem;
-}
-
-
-/* --------------------------------
+/* =================================
    PROFILE IMAGE
--------------------------------- */
+================================= */
 
 .home-img {
+
     border-radius: 50%;
 }
 
+
 .home-img img {
+
     position: relative;
 
     width: 32vw;
@@ -173,37 +204,49 @@ span {
 
     border-radius: 50%;
 
-    box-shadow: 0 0 25px #b74b4b;
-
     cursor: pointer;
 
-    transition: 0.3s linear;
+    box-shadow:
+        0 0 25px #b74b4b;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
+
 .home-img img:hover {
-    transform: scale(1.03);
+
+    transform: scale(1.04);
 
     box-shadow:
         0 0 25px #b74b4b,
-        0 0 50px rgba(183, 75, 75, 0.35);
+        0 0 60px rgba(183, 75, 75, 0.35);
 }
 
 
-/* --------------------------------
+/* =================================
    TYPING TEXT
--------------------------------- */
+================================= */
 
 .typing-text {
-    font-size: 4rem;
+
+    font-size: 5.2rem;
 
     font-weight: 700;
 
-    min-height: 5rem;
+    min-height: 6.5rem;
 
-    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+
+    margin-bottom: 1.5rem;
+
+    letter-spacing: -0.1rem;
 }
 
+
 .typing-text span {
+
     position: relative;
 
     color: #b74b4b;
@@ -213,33 +256,38 @@ span {
 /* WORD */
 
 .typing-text span::before {
+
     content: "Web Developer";
 
     color: #b74b4b;
 
-    animation: words 20s infinite;
+    animation:
+        words 20s infinite;
 }
 
 
 /* CURSOR */
 
 .typing-text span::after {
+
     content: "";
 
     position: absolute;
 
-    right: -8px;
-    top: 0;
+    right: -10px;
 
-    width: calc(100% + 8px);
+    top: 5%;
 
-    height: 100%;
+    width: calc(100% + 10px);
 
-    background-color: black;
+    height: 90%;
 
-    border-left: 3px solid #b74b4b;
+    background-color: #000;
 
-    animation: cursor 0.6s infinite;
+    border-left: 4px solid #b74b4b;
+
+    animation:
+        cursor 0.7s ease-in-out infinite;
 }
 
 
@@ -247,8 +295,17 @@ span {
 
 @keyframes cursor {
 
+    0%,
+    100% {
+
+        border-left-color: #b74b4b;
+
+    }
+
     50% {
+
         border-left-color: transparent;
+
     }
 
 }
@@ -258,40 +315,58 @@ span {
 
 @keyframes words {
 
-    0%, 20% {
+    0%,
+    20% {
+
         content: "Web Developer";
+
     }
 
-    21%, 40% {
+    21%,
+    40% {
+
         content: "Developer";
+
     }
 
-    41%, 60% {
+    41%,
+    60% {
+
         content: "Web Designer";
+
     }
 
-    61%, 80% {
+    61%,
+    80% {
+
         content: "Youtuber";
+
     }
 
-    81%, 100% {
+    81%,
+    100% {
+
         content: "Script Writer";
+
     }
 
 }
 
 
-/* --------------------------------
+/* =================================
    SOCIAL ICONS
--------------------------------- */
+================================= */
 
 .social-icons a {
+
     display: inline-flex;
 
     justify-content: center;
+
     align-items: center;
 
     width: 4rem;
+
     height: 4rem;
 
     background-color: transparent;
@@ -304,27 +379,34 @@ span {
 
     margin: 3rem 1.5rem 3rem 0;
 
-    transition: 0.3s ease;
+    transition:
+        0.3s ease;
 
     color: #b74b4b;
 }
 
+
 .social-icons a:hover {
+
     color: black;
 
-    transform: scale(1.3) translateY(-5px);
+    transform:
+        scale(1.3)
+        translateY(-5px);
 
     background-color: #b74b4b;
 
-    box-shadow: 0 0 25px #b74b4b;
+    box-shadow:
+        0 0 25px #b74b4b;
 }
 
 
-/* --------------------------------
+/* =================================
    BUTTON
--------------------------------- */
+================================= */
 
 .btn {
+
     display: inline-block;
 
     padding: 1rem 2.8rem;
@@ -343,31 +425,141 @@ span {
 
     border: 2px solid #b74b4b;
 
-    transition: 0.3s ease;
+    transition:
+        0.3s ease;
 
     cursor: pointer;
 }
 
+
 .btn:hover {
-    transform: scale(1.03);
+
+    transform:
+        scale(1.04);
 
     background-color: #b74b4b;
 
     color: black;
 
-    box-shadow: 0 0 25px #b74b4b;
+    box-shadow:
+        0 0 25px #b74b4b;
 }
 
 
-/* --------------------------------
+/* =================================
+   SCROLL DOWN
+================================= */
+
+.scroll-down {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 0.8rem;
+
+    color: #777;
+
+    font-size: 1.3rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.35rem;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+    animation:
+        scrollFloat 2s ease-in-out infinite;
+}
+
+
+.scroll-down:hover {
+
+    color: #b74b4b;
+
+    transform:
+        translateX(-50%)
+        translateY(-5px);
+}
+
+
+.scroll-down i {
+
+    font-size: 1.8rem;
+
+    color: #b74b4b;
+
+    animation:
+        arrowBounce 1.5s ease-in-out infinite;
+}
+
+
+/* SCROLL TEXT */
+
+@keyframes scrollFloat {
+
+    0%,
+    100% {
+
+        opacity: 0.55;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* SCROLL ARROW */
+
+@keyframes arrowBounce {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(8px);
+
+    }
+
+}
+
+
+/* =================================
    CALENDAR SECTION
--------------------------------- */
+================================= */
 
 .calendar-section {
 
     min-height: 100vh;
 
-    padding: 10rem 9% 8rem;
+    padding:
+        10rem 9%
+        8rem;
 
     display: flex;
 
@@ -378,24 +570,31 @@ span {
     justify-content: center;
 
     background:
+
         radial-gradient(
             circle at 50% 0%,
             rgba(183, 75, 75, 0.12),
             transparent 45%
         ),
+
         #050505;
 }
 
 
-/* CALENDAR HEADER */
+/* =================================
+   CALENDAR HEADER
+================================= */
 
 .calendar-header {
+
     text-align: center;
 
     margin-bottom: 4rem;
 }
 
+
 .calendar-header h2 {
+
     font-size: 5rem;
 
     font-weight: 700;
@@ -403,16 +602,18 @@ span {
     margin-bottom: 1rem;
 }
 
+
 .calendar-header p {
+
     font-size: 1.6rem;
 
     color: #888;
 }
 
 
-/* --------------------------------
+/* =================================
    CALENDAR CARD
--------------------------------- */
+================================= */
 
 .calendar {
 
@@ -420,36 +621,48 @@ span {
 
     max-width: 1200px;
 
-    background: #0b0b0b;
+    background-color: #0b0b0b;
 
-    border: 1px solid rgba(183, 75, 75, 0.35);
+    border:
+        1px solid
+        rgba(183, 75, 75, 0.35);
 
     border-radius: 2rem;
 
     overflow: hidden;
 
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.6),
-        0 0 40px rgba(183, 75, 75, 0.08);
+
+        0 20px 60px
+        rgba(0, 0, 0, 0.6),
+
+        0 0 40px
+        rgba(183, 75, 75, 0.08);
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 }
+
 
 .calendar:hover {
 
-    transform: translateY(-5px);
+    transform:
+        translateY(-5px);
 
     box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.7),
-        0 0 50px rgba(183, 75, 75, 0.14);
+
+        0 25px 70px
+        rgba(0, 0, 0, 0.7),
+
+        0 0 50px
+        rgba(183, 75, 75, 0.14);
 }
 
 
-/* --------------------------------
+/* =================================
    CALENDAR TOP BAR
--------------------------------- */
+================================= */
 
 .calendar-top {
 
@@ -461,11 +674,14 @@ span {
 
     justify-content: space-between;
 
-    padding: 0 2.5rem;
+    padding:
+        0 2.5rem;
 
-    background: #0e0e0e;
+    background-color: #0e0e0e;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.06);
 }
 
 
@@ -480,6 +696,7 @@ span {
     margin-bottom: 0.2rem;
 }
 
+
 .calendar-title span {
 
     font-size: 1.2rem;
@@ -488,9 +705,9 @@ span {
 }
 
 
-/* --------------------------------
-   STATUS
--------------------------------- */
+/* =================================
+   CALENDAR STATUS
+================================= */
 
 .calendar-status {
 
@@ -505,6 +722,7 @@ span {
     color: #aaa;
 }
 
+
 .calendar-status span {
 
     width: 9px;
@@ -513,16 +731,17 @@ span {
 
     border-radius: 50%;
 
-    background: #4caf50;
+    background-color: #4caf50;
 
     box-shadow:
-        0 0 10px rgba(76, 175, 80, 0.7);
+        0 0 10px
+        rgba(76, 175, 80, 0.7);
 }
 
 
-/* --------------------------------
+/* =================================
    GOOGLE CALENDAR
--------------------------------- */
+================================= */
 
 .calendar-frame {
 
@@ -530,8 +749,11 @@ span {
 
     height: 650px;
 
-    background: #080808;
+    background-color: #080808;
+
+    overflow: hidden;
 }
+
 
 .calendar-frame iframe {
 
@@ -544,8 +766,7 @@ span {
     border: 0;
 
     /*
-       Makes the Google Calendar
-       darker.
+       Darken Google's calendar.
     */
 
     filter:
@@ -556,22 +777,24 @@ span {
 }
 
 
-/* --------------------------------
+/* =================================
    TABLET
--------------------------------- */
+================================= */
 
 @media (max-width: 1000px) {
 
     .home {
+
         gap: 4rem;
+
     }
 
 }
 
 
-/* --------------------------------
+/* =================================
    MOBILE
--------------------------------- */
+================================= */
 
 @media (max-width: 995px) {
 
@@ -587,22 +810,31 @@ span {
 
         width: 40%;
 
-        border-left: 3px solid #b74b4b;
+        border-left:
+            3px solid #b74b4b;
 
-        border-bottom: 3px solid #b74b4b;
+        border-bottom:
+            3px solid #b74b4b;
 
-        border-bottom-left-radius: 2rem;
+        border-bottom-left-radius:
+            2rem;
 
         padding: 1rem;
 
         background-color: #161616;
 
-        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        border-top:
+            0.1rem solid
+            rgba(0, 0, 0, 0.1);
     }
 
+
     nav.active {
+
         display: block;
+
     }
+
 
     nav a {
 
@@ -611,7 +843,9 @@ span {
         font-size: 2rem;
 
         margin: 3rem 0;
+
     }
+
 
     nav a:hover,
     nav a.active {
@@ -620,7 +854,8 @@ span {
 
         border-radius: 0.5rem;
 
-        border-bottom: 0.5rem solid #b74b4b;
+        border-bottom:
+            0.5rem solid #b74b4b;
     }
 
 
@@ -630,24 +865,33 @@ span {
 
         flex-direction: column;
 
-        margin: 5rem 4rem;
+        margin:
+            5rem 4rem;
     }
 
-    .home .home-content h3 {
-
-        font-size: 2.5rem;
-    }
 
     .home-content h1 {
 
         font-size: 5rem;
+
     }
+
+
+    .typing-text {
+
+        font-size: 4rem;
+
+        min-height: 5rem;
+
+    }
+
 
     .home-img img {
 
         width: 70vw;
 
         margin-top: 4rem;
+
     }
 
 
@@ -655,46 +899,89 @@ span {
 
     .calendar-section {
 
-        padding: 8rem 4% 6rem;
+        padding:
+            8rem 4%
+            6rem;
     }
+
 
     .calendar-header h2 {
 
         font-size: 4rem;
+
     }
+
 
     .calendar {
 
-        border-radius: 1.5rem;
+        border-radius:
+            1.5rem;
+
     }
+
 
     .calendar-frame {
 
-        height: 600px;
+        height:
+            600px;
+
     }
 
 }
 
 
-/* --------------------------------
+/* =================================
    SMALL PHONES
--------------------------------- */
+================================= */
 
 @media (max-width: 600px) {
 
-    .home .home-content h1 {
+    .home {
 
-        font-size: 4rem;
+        margin:
+            4rem 2rem;
+
     }
 
-    .home-content h3 {
 
-        font-size: 2.5rem;
+    .home-content h1 {
+
+        font-size:
+            4rem;
+
     }
+
+
+    .typing-text {
+
+        font-size:
+            3.2rem;
+
+        min-height:
+            4rem;
+
+    }
+
 
     .home-img img {
 
-        width: 80vw;
+        width:
+            80vw;
+
+    }
+
+
+    .scroll-down {
+
+        font-size:
+            1rem;
+
+        bottom:
+            25px;
+
+        letter-spacing:
+            0.25rem;
+
     }
 
 
@@ -702,39 +989,61 @@ span {
 
     .calendar-section {
 
-        padding: 8rem 3% 5rem;
+        padding:
+            8rem 3%
+            5rem;
+
     }
+
 
     .calendar-header h2 {
 
-        font-size: 3.5rem;
+        font-size:
+            3.5rem;
+
     }
+
 
     .calendar-header p {
 
-        font-size: 1.4rem;
+        font-size:
+            1.4rem;
+
     }
+
 
     .calendar-top {
 
-        height: 75px;
+        height:
+            75px;
 
-        padding: 0 1.5rem;
+        padding:
+            0 1.5rem;
+
     }
+
 
     .calendar-title h3 {
 
-        font-size: 1.6rem;
+        font-size:
+            1.6rem;
+
     }
+
 
     .calendar-title span {
 
-        font-size: 1rem;
+        font-size:
+            1rem;
+
     }
+
 
     .calendar-frame {
 
-        height: 550px;
+        height:
+            550px;
+
     }
 
 }
